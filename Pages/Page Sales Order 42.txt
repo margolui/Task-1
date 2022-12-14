@@ -2,8 +2,8 @@ OBJECT Page 42 Sales Order
 {
   OBJECT-PROPERTIES
   {
-    Date=12/13/22;
-    Time=11:18:54 PM;
+    Date=12/14/22;
+    Time=[ 8:06:09 PM];
     Modified=Yes;
     Version List=NAVW114.34;
   }
@@ -1056,6 +1056,15 @@ OBJECT Page 42 Sales Order
 
     { 144 ;2   ;Field     ;
                 SourceExpr="Cust Post Description MALIU";
+                Editable=FALSE;
+                OnDrillDown=VAR
+                              WizardSalesHeader@1000 : Page 50000;
+                            BEGIN
+                              WizardSalesHeader.SETRECORD(Rec);
+                              WizardSalesHeader.RUNMODAL;
+                              CurrPage.UPDATE;
+                            END;
+
                 ShowMandatory=TRUE }
 
     { 190 ;2   ;Group     ;
