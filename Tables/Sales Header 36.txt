@@ -2,8 +2,9 @@ OBJECT Table 36 Sales Header
 {
   OBJECT-PROPERTIES
   {
-    Date=04/29/22;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 1:15:09 PM];
+    Modified=Yes;
     Version List=NAVW114.36;
   }
   PROPERTIES
@@ -1978,6 +1979,9 @@ OBJECT Table 36 Sales Header
 
                                                    DataClassification=EndUserIdentifiableInformation;
                                                    CaptionML=ENU=Assigned User ID }
+    { 9001;   ;Reason for Credit   ;Text2000      ;DataClassification=ToBeClassified }
+    { 50000;  ;Cust Post Description MALIU;Text2000;
+                                                   DataClassification=ToBeClassified }
   }
   KEYS
   {

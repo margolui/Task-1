@@ -2,8 +2,9 @@ OBJECT Table 110 Sales Shipment Header
 {
   OBJECT-PROPERTIES
   {
-    Date=10/02/20;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 5:56:58 PM];
+    Modified=Yes;
     Version List=NAVW114.18;
   }
   PROPERTIES
@@ -255,6 +256,8 @@ OBJECT Table 110 Sales Shipment Header
     { 5794;   ;Shipping Agent Service Code;Code10 ;TableRelation="Shipping Agent Services".Code WHERE (Shipping Agent Code=FIELD(Shipping Agent Code));
                                                    CaptionML=ENU=Shipping Agent Service Code }
     { 7001;   ;Allow Line Disc.    ;Boolean       ;CaptionML=ENU=Allow Line Disc. }
+    { 50000;  ;Cust Post Description MALIU;Text2000;
+                                                   DataClassification=ToBeClassified }
   }
   KEYS
   {

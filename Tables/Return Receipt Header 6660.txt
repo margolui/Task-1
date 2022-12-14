@@ -2,8 +2,9 @@ OBJECT Table 6660 Return Receipt Header
 {
   OBJECT-PROPERTIES
   {
-    Date=10/02/20;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 5:19:46 PM];
+    Modified=Yes;
     Version List=NAVW114.18;
   }
   PROPERTIES
@@ -273,6 +274,8 @@ OBJECT Table 6660 Return Receipt Header
     { 6602;   ;Return Order No. Series;Code20     ;TableRelation="No. Series";
                                                    CaptionML=ENU=Return Order No. Series }
     { 7001;   ;Allow Line Disc.    ;Boolean       ;CaptionML=ENU=Allow Line Disc. }
+    { 50000;  ;Cust Post Description MALIU;Text2000;
+                                                   DataClassification=ToBeClassified }
   }
   KEYS
   {
