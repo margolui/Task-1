@@ -1,0 +1,140 @@
+OBJECT Page 50000 Wizard Sales Header
+{
+  OBJECT-PROPERTIES
+  {
+    Date=12/14/22;
+    Time=[ 8:04:06 PM];
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+    SourceTable=Table36;
+    PageType=NavigatePage;
+    OnOpenPage=BEGIN
+                 CurrentStep := 1;
+                 SetControls;
+                 OldValue := "Cust Post Description MALIU";
+                 NewValue := "Cust Post Description MALIU";
+               END;
+
+    ActionList=ACTIONS
+    {
+      { 7       ;    ;ActionContainer;
+                      ActionContainerType=ActionItems }
+      { 8       ;1   ;Action    ;
+                      Name=BackAction;
+                      CaptionML=ENU=Back;
+                      Enabled=ActionBackAllowed;
+                      InFooterBar=Yes;
+                      Image=PreviousRecord;
+                      OnAction=BEGIN
+                                 TakeStep(-1);
+                               END;
+                                }
+      { 9       ;1   ;Action    ;
+                      Name=NextAction;
+                      CaptionML=ENU=Next;
+                      Enabled=ActionNextAllowed;
+                      InFooterBar=Yes;
+                      Image=NextRecord;
+                      OnAction=BEGIN
+                                 TakeStep(1);
+                               END;
+                                }
+      { 10      ;1   ;Action    ;
+                      Name=FinishAction;
+                      CaptionML=ENU=Finish;
+                      Enabled=ActionFinishAllowed;
+                      InFooterBar=Yes;
+                      Image=Approve;
+                      OnAction=BEGIN
+                                 "Cust Post Description MALIU" := NewValue;
+                                 CurrPage.CLOSE();
+                               END;
+                                }
+    }
+  }
+  CONTROLS
+  {
+    { 1   ;0   ;Container ;
+                ContainerType=ContentArea }
+
+    { 2   ;1   ;Group     ;
+                Name=Step1;
+                CaptionML=ENU=Step1;
+                Visible=CurrentStep = 1;
+                GroupType=Group }
+
+    { 5   ;2   ;Group     ;
+                CaptionML=ENU=Enter new value;
+                GroupType=Group }
+
+    { 6   ;3   ;Field     ;
+                CaptionML=ENU=Cust Post Description MALIU;
+                SourceExpr=NewValue }
+
+    { 3   ;1   ;Group     ;
+                Name=Step2;
+                Visible=CurrentStep = 2;
+                GroupType=Group }
+
+    { 13  ;2   ;Group     ;
+                CaptionML=ENU=New value is;
+                GroupType=Group }
+
+    { 12  ;3   ;Field     ;
+                Name=CustPostDescriptionMALIU2;
+                CaptionML=ENU=Cust Post Description MALIU;
+                SourceExpr=NewValue;
+                Editable=FALSE }
+
+    { 11  ;1   ;Group     ;
+                Name=Step3;
+                Visible=CurrentStep = 3;
+                GroupType=Group }
+
+    { 14  ;2   ;Group     ;
+                CaptionML=ENU=Submit changes;
+                GroupType=Group }
+
+    { 4   ;3   ;Field     ;
+                Name=CustPostDescriptionMALIU3;
+                CaptionML=ENU=Cust Post Description MALIU;
+                SourceExpr=NewValue;
+                Editable=FALSE }
+
+    { 15  ;3   ;Field     ;
+                CaptionML=ENU=Old Value;
+                SourceExpr=OldValue;
+                Editable=FALSE }
+
+  }
+  CODE
+  {
+    VAR
+      CurrentStep@1000 : Integer;
+      ActionBackAllowed@1001 : Boolean;
+      ActionNextAllowed@1002 : Boolean;
+      ActionFinishAllowed@1003 : Boolean;
+      OldValue@1007 : Text;
+      NewValue@1004 : Text;
+
+    LOCAL PROCEDURE SetControls@6();
+    BEGIN
+      ActionBackAllowed := CurrentStep > 1;
+      ActionNextAllowed := CurrentStep < 3;
+      ActionFinishAllowed := CurrentStep = 3;
+    END;
+
+    LOCAL PROCEDURE TakeStep@7(Step@1000 : Integer);
+    BEGIN
+      CurrentStep += Step;
+      SetControls;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+
