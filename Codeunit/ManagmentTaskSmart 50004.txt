@@ -1,0 +1,29 @@
+OBJECT Codeunit 50004 ManagmentTaskSmart
+{
+  OBJECT-PROPERTIES
+  {
+    Date=12/14/22;
+    Time=[ 6:05:09 PM];
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+    OnRun=BEGIN
+          END;
+
+  }
+  CODE
+  {
+
+    [EventSubscriber(Codeunit,414,OnBeforeReleaseSalesDoc)]
+    LOCAL PROCEDURE CheckCustPostDescriptionMALIU@2(VAR SalesHeader@1000 : Record 36;PreviewMode@1001 : Boolean);
+    BEGIN
+      SalesHeader.TESTFIELD("Cust Post Description MALIU");
+    END;
+
+    BEGIN
+    END.
+  }
+}
+
