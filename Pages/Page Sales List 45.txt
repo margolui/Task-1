@@ -2,8 +2,9 @@ OBJECT Page 45 Sales List
 {
   OBJECT-PROPERTIES
   {
-    Date=03/24/19;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 1:20:41 PM];
+    Modified=Yes;
     Version List=NAVW114.00;
   }
   PROPERTIES
@@ -206,9 +207,15 @@ OBJECT Page 45 Sales List
                 SourceExpr="Document Date" }
 
     { 3   ;2   ;Field     ;
+                CaptionML=ENU=<Cust Post Description MALIU>;
                 ToolTipML=ENU=Specifies whether the document is open, waiting to be approved, has been invoiced for prepayment, or has been released to the next stage of processing.;
                 ApplicationArea=#Basic,#Suite;
                 SourceExpr=Status }
+
+    { 7   ;2   ;Field     ;
+                Name=<Cust Post Description MALIU>;
+                CaptionML=ENU=<Cust Post Description MALIU>;
+                SourceExpr="Cust Post Description MALIU" }
 
     { 1900000007;0;Container;
                 ContainerType=FactBoxArea }

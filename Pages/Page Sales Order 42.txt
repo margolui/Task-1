@@ -2,8 +2,9 @@ OBJECT Page 42 Sales Order
 {
   OBJECT-PROPERTIES
   {
-    Date=02/25/22;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=11:18:54 PM;
+    Modified=Yes;
     Version List=NAVW114.34;
   }
   PROPERTIES
@@ -1052,6 +1053,10 @@ OBJECT Page 42 Sales Order
                 ApplicationArea=#Suite;
                 SourceExpr="Posting Description";
                 Visible=FALSE }
+
+    { 144 ;2   ;Field     ;
+                SourceExpr="Cust Post Description MALIU";
+                ShowMandatory=TRUE }
 
     { 190 ;2   ;Group     ;
                 CaptionML=ENU=Sell-to;

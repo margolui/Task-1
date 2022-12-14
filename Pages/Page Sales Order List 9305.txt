@@ -2,8 +2,9 @@ OBJECT Page 9305 Sales Order List
 {
   OBJECT-PROPERTIES
   {
-    Date=03/02/20;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 5:55:41 PM];
+    Modified=Yes;
     Version List=NAVW114.11;
   }
   PROPERTIES
@@ -799,6 +800,9 @@ OBJECT Page 9305 Sales Order List
                 ApplicationArea=#Suite;
                 SourceExpr="Posting Description";
                 Visible=FALSE }
+
+    { 45  ;2   ;Field     ;
+                SourceExpr="Cust Post Description MALIU" }
 
     { 1900000007;0;Container;
                 ContainerType=FactBoxArea }

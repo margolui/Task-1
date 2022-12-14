@@ -2,8 +2,9 @@ OBJECT Page 144 Posted Sales Credit Memos
 {
   OBJECT-PROPERTIES
   {
-    Date=02/26/21;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 5:26:12 PM];
+    Modified=Yes;
     Version List=NAVW114.23;
   }
   PROPERTIES
@@ -461,6 +462,9 @@ OBJECT Page 144 Posted Sales Credit Memos
                               DocExchServDocStatus.DocExchStatusDrillDown(Rec);
                             END;
                              }
+
+    { 30  ;2   ;Field     ;
+                SourceExpr="Cust Post Description MALIU" }
 
     { 1900000007;0;Container;
                 ContainerType=FactBoxArea }

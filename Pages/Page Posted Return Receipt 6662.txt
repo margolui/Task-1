@@ -2,8 +2,9 @@ OBJECT Page 6662 Posted Return Receipts
 {
   OBJECT-PROPERTIES
   {
-    Date=02/26/21;
-    Time=12:00:00 PM;
+    Date=12/13/22;
+    Time=[ 5:22:10 PM];
+    Modified=Yes;
     Version List=NAVW114.23;
   }
   PROPERTIES
@@ -277,6 +278,9 @@ OBJECT Page 6662 Posted Return Receipts
                 ApplicationArea=#SalesReturnOrder;
                 SourceExpr="Shipment Date";
                 Visible=FALSE }
+
+    { 9   ;2   ;Field     ;
+                SourceExpr="Cust Post Description MALIU" }
 
     { 1900000007;0;Container;
                 ContainerType=FactBoxArea }
