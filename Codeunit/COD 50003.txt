@@ -1,0 +1,49 @@
+OBJECT Codeunit 50003 COD 50003
+{
+  OBJECT-PROPERTIES
+  {
+    Date=12/19/22;
+    Time=[ 3:23:01 PM];
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+    OnRun=BEGIN
+          END;
+
+  }
+  CODE
+  {
+
+    [EventSubscriber(Codeunit,90,OnAfterInsertPostedHeaders)]
+    LOCAL PROCEDURE TransportOrderNo3@5(VAR PurchaseHeader@1000 : Record 38;VAR PurchRcptHeader@1001 : Record 120;VAR PurchInvHeader@1002 : Record 122;VAR PurchCrMemoHdr@1003 : Record 124;VAR ReturnShptHeader@1004 : Record 6650);
+    BEGIN
+      PurchaseHeader.CALCFIELDS("CalcField MALIU");
+
+      IF PurchRcptHeader."No." <> '' THEN BEGIN
+        PurchRcptHeader."CalcField MALIU" := PurchaseHeader."CalcField MALIU";
+        PurchRcptHeader.MODIFY;
+      END;
+
+      IF PurchInvHeader."No." <> '' THEN BEGIN
+        PurchInvHeader."CalcField MALIU" := PurchaseHeader."CalcField MALIU";
+        PurchInvHeader.MODIFY;
+      END;
+
+      IF PurchCrMemoHdr."No." <> '' THEN BEGIN
+        PurchCrMemoHdr."CalcField MALIU" := PurchaseHeader."CalcField MALIU";
+        PurchCrMemoHdr.MODIFY;
+      END;
+
+      IF ReturnShptHeader."No." <> '' THEN BEGIN
+        ReturnShptHeader."CalcField MALIU" := PurchaseHeader."CalcField MALIU";
+        ReturnShptHeader.MODIFY;
+      END;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+
