@@ -2,8 +2,8 @@ OBJECT Page 42 Sales Order
 {
   OBJECT-PROPERTIES
   {
-    Date=12/14/22;
-    Time=[ 8:06:09 PM];
+    Date=12/26/22;
+    Time=10:49:31 PM;
     Modified=Yes;
     Version List=NAVW114.34;
   }
@@ -987,6 +987,21 @@ OBJECT Page 42 Sales Order
                       PromotedCategory=Category11;
                       OnAction=BEGIN
                                  DocPrint.PrintSalesOrder(Rec,Usage::"Order Confirmation");
+                               END;
+                                }
+      { 146     ;    ;ActionContainer;
+                      CaptionML=ENU=Reports;
+                      ActionContainerType=Reports }
+      { 147     ;1   ;Action    ;
+                      Name=Task 2;
+                      CaptionML=ENU=Report Task 2;
+                      RunObject=Report 50000;
+                      Image=Report;
+                      PromotedCategory=Report }
+      { 151     ;1   ;Action    ;
+                      Name=Task 3;
+                      OnAction=BEGIN
+                                 GetReleatedInformation;
                                END;
                                 }
     }
@@ -2000,6 +2015,7 @@ OBJECT Page 42 Sales Order
       IsSellToCountyVisible@1042 : Boolean;
       IsShipToCountyVisible@1040 : Boolean;
       ShouldSearchForCustByName@1045 : Boolean;
+      Customer@1046 : Record 18;
 
     LOCAL PROCEDURE ActivateFields@11();
     BEGIN
