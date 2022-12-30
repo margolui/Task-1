@@ -2,8 +2,9 @@ OBJECT Page 15 Location List
 {
   OBJECT-PROPERTIES
   {
-    Date=03/24/19;
-    Time=12:00:00 PM;
+    Date=12/29/22;
+    Time=10:00:41 PM;
+    Modified=Yes;
     Version List=NAVW114.00;
   }
   PROPERTIES
@@ -49,8 +50,32 @@ OBJECT Page 15 Location List
                       RunObject=Page 7302;
                       RunPageLink=Location Code=FIELD(Code);
                       Promoted=Yes;
-                      Image=Bins;
+                      Image=Dimensions;
                       PromotedCategory=Category4 }
+      { 13      ;2   ;ActionGroup }
+      { 12      ;3   ;Action    ;
+                      Name=DimensionsSingle;
+                      CaptionML=ENU=DimensionsSingle;
+                      ApplicationArea=#All;
+                      RunObject=Page 540;
+                      RunPageLink=Table ID=CONST(14),
+                                  No.=FIELD(Code);
+                      Promoted=Yes;
+                      Image=Dimensions;
+                      PromotedCategory=Process;
+                      OnAction=BEGIN
+                                 MESSAGE('Dimensions');
+                               END;
+                                }
+      { 8       ;3   ;Action    ;
+                      Name=DimensionsMultiple;
+                      CaptionML=ENU=DimensionsMultiple;
+                      ApplicationArea=#All;
+                      RunObject=Page 542;
+                      RunPageLink=Table ID=CONST(14),
+                                  No.=FIELD(Code);
+                      Promoted=Yes;
+                      Image=DimensionSets }
       { 1900000005;0 ;ActionContainer;
                       ActionContainerType=NewDocumentItems }
       { 1907283205;1 ;Action    ;
@@ -72,6 +97,11 @@ OBJECT Page 15 Location List
                       Promoted=Yes;
                       Image=NewWarehouse;
                       PromotedCategory=Process }
+      { 5       ;1   ;Action    ;
+                      Name=Dimensions2;
+                      CaptionML=ENU=Dimensions;
+                      ApplicationArea=#All;
+                      Image=Dimensions }
       { 1900000006;0 ;ActionContainer;
                       ActionContainerType=Reports }
       { 1901320106;1 ;Action    ;
